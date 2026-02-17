@@ -6,7 +6,7 @@
 //
 
 
-import SwiftUI
+import Swift
 
 struct ContentView: View {
 @State var outputText = "Hello, World!"
