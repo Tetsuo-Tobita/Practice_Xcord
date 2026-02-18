@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+error
 
 struct ContentView: View {
     @State private var outputText = "Hello, World!"
@@ -16,7 +17,7 @@ struct ContentView: View {
             VStack {
                 Text(outputText)
                     .font(.largeTitle)
-                
+                error
                 Button("ボタン") {
                     isOriginal.toggle()
                     outputText = isOriginal ? "Hello, World!" : "Hi, SwiftUI!"
@@ -45,3 +46,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+change
