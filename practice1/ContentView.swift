@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import openAI
 
 struct ContentView: View {
     @State private var outputText = "Hello, World!"
