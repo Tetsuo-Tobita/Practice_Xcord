@@ -9,18 +9,36 @@
 import SwiftUI
 
 struct ContentView: View {
-@State var outputText = "Hello, World!"
+    @State private var outputText = "Hello, World!"
+    @State private var isOriginal = true
     var body: some View {
-        VStack{
-            Text(outputText)
-                .font(.largeTitle)
-            
-            Button("ボタン"){
-                outputText="Hi, SwiftUI!"
+        NavigationStack {
+            VStack {
+                Text(outputText)
+                    .font(.largeTitle)
+                
+                Button("ボタン") {
+                    isOriginal.toggle()
+                    outputText = isOriginal ? "Hello, World!" : "Hi, SwiftUI!"
+                }
+                .padding()
+                .background(.blue)
+                .foregroundColor(.white)
+                
+                Spacer().frame(height: 12)
+                
+                NavigationLink(destination: DetailView()) {
+                    Text("次のページへ")
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(8)
+                }
+                .padding(.horizontal)
             }
+            .navigationTitle("Home")
             .padding()
-            .background(.blue)
-            .foregroundColor(.white)
         }
     }
 }
